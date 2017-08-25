@@ -8,7 +8,8 @@ export default class DragNDrop extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      testEntry: ['Swap me around', 'Swap her around', 'Swap him around']
+      targetList: ['item goes here', 'test message here', 'drop stuff here'],
+      sourceList: ['something is here', 'move me please!', 'the good stuff']
     }
   }
 
@@ -25,10 +26,10 @@ export default class DragNDrop extends Component {
       console.log('entry #', i, ':', entry);
     })
     return (
-      <div className='container' ref={this.dragulaDecorator}>
-        { this.state.testEntry.map((entry, i) => {
-          return <ListEntry entry={entry} key={i} /> 
-        })}
+      <div className='target' ref={this.dragulaDecorator}>
+        { this.state.testEntry.map((entry, i) => 
+          <ListEntry entry={entry} key={i} /> 
+        )}
         <div>test stuff goes here</div>
         <div>more test stuff here</div>
       </div>

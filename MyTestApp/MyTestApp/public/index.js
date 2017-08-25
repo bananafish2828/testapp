@@ -1,6 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import DragNDrop from './DragNDrop.js';
+import Board from './Board.jsx';
+import { observe } from './Game';
 
-ReactDOM.render(<DragNDrop />, document.getElementById('app'));
+const rootEl = document.getElementById('app');
+
+observe(knightPosition =>
+  ReactDOM.render(
+    <Board knightPosition = {knightPosition} />, 
+    rootEl
+  )
+);
